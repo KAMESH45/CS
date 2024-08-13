@@ -1,6 +1,0 @@
-import plotly.express as px
-iris = px.data.iris()
-print("First 10 Records:\n", iris.head(10))
-print("\nNumber of Rows and Columns:", iris.shape)
-print("\nColumn Names:", iris.columns.tolist())
-print("\nMean of All Numerical Attributes:\n", iris.mean(numeric_only=True))
