@@ -1,0 +1,15 @@
+import plotly.express as px
+import matplotlib.pyplot as plt
+import seaborn as sns
+import scipy.stats as stats
+iris = px.data.iris()
+attr = 'sepal_length'
+print("First Five Records:\n", iris[attr].head())
+sns.histplot(iris[attr], kde=True, bins=20, color='blue')
+plt.title(f'Histogram & KDE for {attr}')
+plt.show()
+stats.probplot(iris[attr], dist="norm", plot=plt)
+plt.title(f'Probability Plot for {attr}')
+plt.show()
+print(f"Skewness for {attr} = {iris[attr].skew()}")
+print(f"Kurtosis for {attr} = {iris[attr].kurt()}")
